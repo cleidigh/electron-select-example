@@ -1,0 +1,32 @@
+
+select {
+    font-size: 20px;
+    background-color: #b57800;
+    color: #ffffff;
+
+}
+
+option:checked {
+    color: #ffffff;
+    box-shadow: 0 0 10px 100px #905000 inset;
+    background: -webkit-gradient(0deg, black 0%, black 100%);
+}
+
+
+option {
+    color: #ffffff;
+    /*box-shadow: 0 0 10px 100px #b57800 inset;*/
+}
+
+option:hover {
+    background-color: #907000;
+    box-shadow: 0 0 10px 100px #907000 inset;
+}
+
+#select1_div {
+    display: block;
+}
+
+#select1_optionsdiv {
+    display: none;
+}

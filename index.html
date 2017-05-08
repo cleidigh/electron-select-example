@@ -2,18 +2,48 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Select Boxes with drop shadow selection</title>
+    <link href="index.css"  rel="stylesheet" type="text/css" />
+
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1 class="h1_text">Select Boxes with drop shadow selection</h1>
     <!-- All of the Node.js APIs are available in this renderer process. -->
     We are using Node.js <script>document.write(process.versions.node)</script>,
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+
+<br>
+
+<br><br>
+
+<!--this first select can be fully styled normally and we get the drop-down arrow -->
+<!--we add an event listener to toggle the visibility of the second select-->
+<!--we never let the drop-down options expand since these options cannot override the color-->
+<div id="select1_div">
+    <select id="select1" size=1>
+      <option>OptionOne</option>
+      <option>OptionTwo</option>
+      <option>OptionThree</option>
+    
+      </select>
+</div>
+<!--this second select test the size attribute, this makes back shadow work-->
+<!--we just toggle its visibility based on click or drop down key on first select-->
+<div id="select1_optionsdiv">
+<select id="select1_options" size=3 onclick="select1()">
+      <option>OptionOne</option>
+      <option>OptionTwo</option>
+      <option>OptionThree</option>
+    </select>
+</div>
+
+
   </body>
 
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
+    // require('./index.js')
   </script>
 </html>
