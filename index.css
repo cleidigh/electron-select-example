@@ -9,7 +9,7 @@ select {
 option:checked {
     color: #ffffff;
     box-shadow: 0 0 10px 100px #905000 inset;
-    background: -webkit-gradient(0deg, black 0%, black 100%);
+
 }
 
 
