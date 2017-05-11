@@ -9,7 +9,7 @@ log.warn('Hello, renderer');
 function select1(event, id) {
 
     log.warn('event: ' + event.keyCode);
-    if (event.keyCode === 13 || event.type === 'mousedown') {
+    if (event.keyCode === 13 || event.type === 'mouseup' || (event.keyCode  === 40 && event.altKey  === true )) {
         log.warn('Enter');
         document.querySelector('#select1_optionsdiv').style.display = 'block';
         document.getElementById('select1_options').focus()
@@ -22,7 +22,7 @@ function select1(event, id) {
 
 function select1_o(event, id) {
 
-    if (event.keyCode === 13 || event.type === 'mouseup') {
+    if (event.keyCode === 13 || event.type === 'mouseup' ) {
 
         log.warn('Enter selected');
         i = document.getElementById('select1_options').selectedIndex
@@ -35,10 +35,10 @@ function select1_o(event, id) {
 
 }
 
-
+document.querySelector('#select1').addEventListener('keydown', function () { select1(event, this); }, false);
 
 document.querySelector('#select1').addEventListener('keypress', function () { select1(event, this); }, false);
-// document.querySelector('#select1').addEventListener('mousedown', function () { select1(event, this); }, false);
+document.querySelector('#select1').addEventListener('mouseup', function () { select1(event, this); }, false);
 
 document.querySelector('#select1_options').addEventListener('keypress', function () { select1_o(event, this); }, false);
 document.querySelector('#select1_options').addEventListener('mouseup', function () { select1_o(event, this); }, false);
